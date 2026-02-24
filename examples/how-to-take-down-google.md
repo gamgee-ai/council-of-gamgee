@@ -111,7 +111,7 @@ The Adversary opened with a blunt pre-mortem.
 > Who benefits from people BELIEVING Google can be taken down, regardless of whether it is true?
 > 1. **Venture capitalists** who fund "Google killers" -- they need the narrative to raise funds and generate deal flow.
 > 2. **Startup founders** who position themselves as Google challengers -- it is a great fundraising pitch.
-> 5. **The user's own ego** -- "taking down Google" is a seductive narrative. It feels like a worthy quest. That emotional appeal should make you suspicious.
+> 3. **The user's own ego** -- "taking down Google" is a seductive narrative. It feels like a worthy quest. That emotional appeal should make you suspicious.
 
 ---
 

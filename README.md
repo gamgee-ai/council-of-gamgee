@@ -25,7 +25,7 @@ Seven AI agents argue about your strategic question until they converge on an an
 
 Then the debate starts. **Shannon challenges the full council** to put numbers on their claims. **Musashi concedes to Khaldun** on patience ("do not overcommit resources to attacking a fortress that is already crumbling from within") but holds firm on initiative ("The Adversary argued for patience -- but this is surrender disguised as strategy"). **Girard concedes to Burt** on structure, but defends the counter-point: "MySpace had the topology; Facebook had the mimetic desirability. Structure determines the *speed* of mimetic shift, not its *possibility*."
 
-All seven independently converge: **you don't compete with Google Search. You make search obsolete.**
+All seven agree on the mechanism: **you don't compete with Google Search. You make search obsolete.** (Shannon and Adversary dispute whether it's *feasible* -- but even they agree this is how it would happen.)
 
 [Read the full transcript &rarr;](examples/how-to-take-down-google.md)
 
@@ -78,7 +78,7 @@ The agents don't just analyze in parallel -- they **debate each other directly**
 
 **Full council debate** (recommended):
 
-```
+```text
 /council How should I position my startup against [competitor]?
 ```
 
@@ -88,7 +88,7 @@ A full council debate produces 30-50+ cross-agent messages.
 
 **Single agent** (quick analysis from one framework):
 
-```
+```text
 /council-kautilya What are the power dynamics in [situation]?
 /council-adversary Red team my plan to [do something]
 /council-musashi What do I literally do this week about [problem]?
@@ -122,7 +122,7 @@ Each agent produces a genuinely different analysis -- not just different words, 
 
 ## Cost
 
-A full council debate typically costs $2-5 in API usage depending on the question complexity and model. Seven agents running in parallel, each making multiple API calls and debating each other, adds up. Single-agent queries are a fraction of that.
+A full council debate typically costs $2-5 in API usage at current Anthropic pricing, depending on the question complexity and model. Seven agents running in parallel, each making multiple API calls and debating each other, adds up. Single-agent queries are a fraction of that.
 
 ## License
 
