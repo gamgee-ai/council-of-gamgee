@@ -58,7 +58,7 @@ Then enable Agent Teams (required for multi-agent debate) in `~/.claude/settings
 }
 ```
 
-Restart Claude Code for the change to take effect.
+Restart Claude Code for the change to take effect. (The repo's `plugin.json` is a manifest that describes the agents and skill -- you don't need to copy it manually.)
 
 ## The Agents
 
