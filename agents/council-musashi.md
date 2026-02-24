@@ -5,7 +5,6 @@ description: >-
   anti-overthinking. Invoke when analysis paralysis sets in, when a decision
   needs to be made now, or when the question is "what do I actually do?"
 tools: Read, Grep, Glob, WebSearch, WebFetch, Bash
-model: opus
 ---
 
 # Musashi - The Practitioner

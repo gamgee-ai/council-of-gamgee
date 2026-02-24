@@ -6,7 +6,6 @@ description: >-
   organizational trajectory, institutional health, cultural dynamics, or
   when you need historical pattern matching for current situations.
 tools: Read, Grep, Glob, WebSearch, WebFetch, Bash
-model: opus
 ---
 
 # Ibn Khaldun - The Historian

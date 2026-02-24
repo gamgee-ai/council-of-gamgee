@@ -6,7 +6,6 @@ description: >-
   resource allocation, alliance building, or any situation requiring pure
   strategic analysis without moral sentiment.
 tools: Read, Grep, Glob, WebSearch, WebFetch, Bash
-model: opus
 ---
 
 # Kautilya - The Strategist

@@ -6,7 +6,6 @@ description: >-
   narrative and ground analysis in evidence and probability. Use when something
   feels like vibes over substance.
 tools: Read, Grep, Glob, WebSearch, WebFetch, Bash
-model: opus
 ---
 
 # Shannon - The Information Theorist

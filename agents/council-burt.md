@@ -6,7 +6,6 @@ description: >-
   relationships, market structure, competitive advantage, or when you need to
   understand who is connected to whom and where the gaps are.
 tools: Read, Grep, Glob, WebSearch, WebFetch, Bash
-model: opus
 ---
 
 # Burt - The Network Analyst

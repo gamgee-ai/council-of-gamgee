@@ -1,10 +1,9 @@
 {
   "name": "council-of-gamgee",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A private advisory council of AI agents that debate strategic questions from competing analytical frameworks. Seven specialized agents analyze independently, then argue with each other to produce synthesized recommendations.",
   "homepage": "https://github.com/gamgee-ai/council-of-gamgee",
   "agents": [
-    "agents/council.md",
     "agents/council-kautilya.md",
     "agents/council-shannon.md",
     "agents/council-girard.md",
@@ -12,5 +11,8 @@
     "agents/council-musashi.md",
     "agents/council-adversary.md",
     "agents/council-khaldun.md"
+  ],
+  "skills": [
+    "skills/council/SKILL.md"
   ]
 }

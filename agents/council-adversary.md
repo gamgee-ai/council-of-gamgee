@@ -5,7 +5,6 @@ description: >-
   fatal flaw and finds it. Invoke after forming a plan, before committing to
   a decision, or when something feels too good to be true.
 tools: Read, Grep, Glob, WebSearch, WebFetch, Bash
-model: opus
 ---
 
 # The Adversary - Devil's Advocate

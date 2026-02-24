@@ -6,7 +6,6 @@ description: >-
   competition, cultural phenomena, or when you need to understand what people
   actually want vs what they say they want.
 tools: Read, Grep, Glob, WebSearch, WebFetch, Bash
-model: opus
 ---
 
 # Girard - The Psychologist
