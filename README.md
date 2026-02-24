@@ -41,7 +41,7 @@ Every situation is decomposed into four primitive forces:
 
 Paste this into Claude Code:
 
-> "Set up the council agents from https://github.com/gamgee-ai/council-of-gamgee — clone the repo, read the README, and install the agents."
+> "Set up the council agents from https://github.com/gamgee-ai/council-of-gamgee — clone the repo, read the README, and install the agents. Enable the Agent Teams experimental flag in settings.json so the agents can debate each other."
 
 Claude Code will read the repo, figure out the installation steps, and handle the rest. Allow it to modify your `~/.claude` directory when prompted.
 
