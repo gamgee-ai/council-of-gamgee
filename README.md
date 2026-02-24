@@ -1,12 +1,66 @@
 # Council of Gamgee
 
-Your private advisory council of AI agents that debate strategic questions from competing analytical frameworks.
+Seven AI agents argue about your strategic question until they converge on an answer no single agent could reach.
 
-Seven specialized agents analyze your question independently, then argue with each other — making concessions, challenging assumptions, and producing a synthesis no single perspective could reach alone.
+<details>
+<summary><strong>See the council debate "How do you take down Google?"</strong></summary>
 
-## What This Is
+<br>
 
-You bring a strategic question. The council debates it through seven lenses:
+**Kautilya** opens with a full Saptanga assessment of Google as a state -- and finds the weak point:
+
+> Google's allies are transactional, not loyal. Apple takes Google's money but would switch if economics favored it. Android OEMs resent Google's control. The alliance network is held together by economic gravity, not genuine alignment. When gravity weakens, allies will defect rapidly.
+
+**Musashi** cuts to the move:
+
+> You do not attack Google. You make Google irrelevant. Musashi never attacked a fortress head-on. You make the fortress pointless. **One move: Own the answer layer.**
+
+**Girard** analyzes the desire behind the question itself:
+
+> "How do you take down Google?" is itself a mimetically charged question. The desire to topple a giant is one of the oldest mimetic patterns in human culture. Anyone asking this question should ask themselves: *Is this desire genuinely my own, or am I borrowing it from the ambient cultural resentment toward Big Tech?*
+
+**Shannon** demands base rates and demolishes the premise:
+
+> The base rate for deliberately taking down a company with 90% market share, $100B+ cash reserves, and top-tier engineering talent is approximately 1%. Anyone telling you they have a strategy to "take down Google" is selling you a narrative, not an analysis. Demand their base rates.
+
+Then the debate starts. **Shannon challenges the full council** to put numbers on their claims. **Musashi concedes to Khaldun** on patience ("do not overcommit resources to attacking a fortress that is already crumbling from within") but holds firm on initiative ("The Adversary argued for patience -- but this is surrender disguised as strategy"). **Girard concedes to Burt** on structure, but defends the counter-point: "MySpace had the topology; Facebook had the mimetic desirability. Structure determines the *speed* of mimetic shift, not its *possibility*."
+
+All seven independently converge: **you don't compete with Google Search. You make search obsolete.**
+
+[Read the full transcript &rarr;](examples/how-to-take-down-google.md)
+
+</details>
+
+## Quick Install
+
+### Let Claude do it
+
+Paste this into [Claude Code](https://docs.anthropic.com/en/docs/claude-code):
+
+> "Set up the council agents from https://github.com/gamgee-ai/council-of-gamgee -- clone the repo, read the README, and install the agents. Enable the Agent Teams experimental flag in settings.json so the agents can debate each other."
+
+### Manual install
+
+```bash
+git clone https://github.com/gamgee-ai/council-of-gamgee.git
+mkdir -p ~/.claude/agents ~/.claude/skills/council
+cp council-of-gamgee/agents/*.md ~/.claude/agents/
+cp council-of-gamgee/skills/council/SKILL.md ~/.claude/skills/council/
+```
+
+Then enable Agent Teams (required for multi-agent debate) in `~/.claude/settings.json`:
+
+```json
+{
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  }
+}
+```
+
+Restart Claude Code for the change to take effect.
+
+## The Agents
 
 | Agent | Framework | What They Do |
 |-------|-----------|-------------|
@@ -18,70 +72,21 @@ You bring a strategic question. The council debates it through seven lenses:
 | **Adversary** | Red Team | Pre-mortem, hidden assumptions, ten reasons this fails |
 | **Khaldun** | Muqaddimah | Historical cycles, rise and decline patterns, asabiyyah |
 
-Plus a **Conductor** that carries all seven frameworks and synthesizes.
+The agents don't just analyze in parallel -- they **debate each other directly**, challenge assumptions, make concessions, and converge on recommendations that survive adversarial scrutiny.
 
-The agents don't just analyze in parallel — they **debate each other directly**, challenge assumptions, make concessions, and converge on recommendations that survive adversarial scrutiny.
+## Usage
 
-## The Four Fundamental Forces
+**Full council debate** (recommended):
 
-Every situation is decomposed into four primitive forces:
-
-1. **Information Asymmetry** — who knows what others don't
-2. **Network Concentration** — where connections cluster and power accrues
-3. **Mimetic Desire** — people wanting what others want
-4. **Entropy/Disequilibrium** — opportunity where things are out of balance
-
-## Setup
-
-### Requirements
-
-- [Claude Code](https://docs.anthropic.com/en/docs/claude-code) CLI installed and working
-
-### Quick Install (let Claude do it)
-
-Paste this into Claude Code:
-
-> "Set up the council agents from https://github.com/gamgee-ai/council-of-gamgee — clone the repo, read the README, and install the agents. Enable the Agent Teams experimental flag in settings.json so the agents can debate each other."
-
-Claude Code will read the repo, figure out the installation steps, and handle the rest. Allow it to modify your `~/.claude` directory when prompted.
-
-### Manual Install
-
-Create the agents directory if it doesn't exist, then copy the agent files:
-
-```bash
-git clone https://github.com/gamgee-ai/council-of-gamgee.git
-mkdir -p ~/.claude/agents
-cp council-of-gamgee/agents/*.md ~/.claude/agents/
+```
+/council How should I position my startup against [competitor]?
 ```
 
-Optionally, copy the frameworks reference doc:
+The `/council` skill spawns all seven agents, has them analyze independently, then debate each other. They produce a synthesis with: Where They Agree, Where They Disagree, What To Do, and What Could Go Wrong.
 
-```bash
-cp council-of-gamgee/frameworks.md ~/.claude/agents/
-```
+A full council debate produces 30-50+ cross-agent messages.
 
-That's it. The agents are now available as subagents in any Claude Code session. You can use them individually right away (see Usage below).
-
-### Step 2: Enable Agent Teams (for multi-agent debate)
-
-> **Note:** As of February 2026, Agent Teams is an experimental feature in Claude Code. The agents work individually without this flag, but for the full council debate experience (where agents message and challenge each other directly), you need to enable it.
-
-Add the following to your Claude Code settings file at `~/.claude/settings.json`:
-
-```json
-{
-  "env": {
-    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
-  }
-}
-```
-
-If you already have content in that file, just merge the `env` block into your existing settings. Then restart Claude Code for the change to take effect.
-
-### Usage
-
-**Single agent** (any strategic question):
+**Single agent** (quick analysis from one framework):
 
 ```
 /council-kautilya What are the power dynamics in [situation]?
@@ -89,54 +94,35 @@ If you already have content in that file, just merge the `env` block into your e
 /council-musashi What do I literally do this week about [problem]?
 ```
 
-**Full council debate** (Agent Teams):
+## The Four Fundamental Forces
 
-Ask Claude Code to create a team and spawn all council members on your question:
+Every situation is decomposed into four primitive forces:
 
-> "Create a team with kautilya, shannon, girard, adversary, musashi, and burt. Have them debate: [your strategic question]. They should challenge each other directly and produce a synthesis."
+1. **Information Asymmetry** -- who knows what others don't
+2. **Network Concentration** -- where connections cluster and power accrues
+3. **Mimetic Desire** -- people wanting what others want
+4. **Entropy/Disequilibrium** -- opportunity where things are out of balance
 
-The agents will:
-1. Research independently (with web search)
-2. Produce initial analyses from their framework
-3. Message each other to debate
-4. Make concessions and refine positions
-5. Converge on a synthesized recommendation
-
-A full council debate typically takes 5-10 minutes and produces 30-50+ cross-agent messages.
-
-**Conductor** (single-agent synthesis):
-
-```
-/council [your question]
-```
-
-Or just say:
-
-> "Council of Gamgee, [your question]"
-
-The conductor carries compressed versions of all seven frameworks and selects the 3-4 most relevant for your question.
-
-## Frameworks Reference
-
-See [frameworks.md](frameworks.md) for the full analytical framework including:
-- Four Fundamental Forces and their interactions
-- Condensed methodology for each of the seven agents
-- Force interaction table
+See [frameworks.md](frameworks.md) for the full analytical framework.
 
 ## Examples
+
+See the [examples/](examples/) directory for full council transcripts.
 
 ### Questions that work well
 
 - "Should I keep building or start selling?"
 - "Analyze the power dynamics in [industry/situation]"
-- "I'm deciding between [option A] and [option B] — what am I not seeing?"
+- "I'm deciding between [option A] and [option B] -- what am I not seeing?"
 - "Red team my plan to [launch/build/invest in something]"
 - "What is the current state of [market/geopolitical situation]?"
 - "How should I position myself in [competitive landscape]?"
 
-### What to expect
+Each agent produces a genuinely different analysis -- not just different words, but different conclusions drawn from different premises. The debate surfaces blind spots, challenges assumptions, and frequently changes the recommendation from what any single agent would have suggested.
 
-Each agent produces a genuinely different analysis — not just different words, but different conclusions drawn from different premises. The debate between them surfaces blind spots, challenges assumptions, and frequently changes the recommendation from what any single agent would have suggested.
+## Cost
+
+A full council debate typically costs $2-5 in API usage depending on the question complexity and model. Seven agents running in parallel, each making multiple API calls and debating each other, adds up. Single-agent queries are a fraction of that.
 
 ## License
 
